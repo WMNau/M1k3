@@ -1,0 +1,46 @@
+plugins {
+    id 'java'
+}
+
+group 'nau.mike'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = JavaVersion.VERSION_11
+targetCompatibility = JavaVersion.VERSION_11
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    annotationProcessor "org.projectlombok:lombok:1.18.22"
+    compileOnly "org.projectlombok:lombok:1.18.22"
+    testAnnotationProcessor "org.projectlombok:lombok:1.18.22"
+    testCompileOnly "org.projectlombok:lombok:1.18.22"
+
+    implementation "org.slf4j:slf4j-simple:1.7.32"
+
+    implementation platform("org.lwjgl:lwjgl-bom:3.3.0")
+
+    implementation "org.lwjgl:lwjgl:3.3.0"
+    implementation "org.lwjgl:lwjgl-assimp:3.3.0"
+    implementation "org.lwjgl:lwjgl-glfw:3.3.0"
+    implementation "org.lwjgl:lwjgl-openal:3.3.0"
+    implementation "org.lwjgl:lwjgl-opengl:3.3.0"
+    implementation "org.lwjgl:lwjgl-stb:3.3.0"
+
+    runtimeOnly "org.lwjgl:lwjgl:3.3.0:natives-macos"
+    runtimeOnly "org.lwjgl:lwjgl-assimp:3.3.0:natives-macos"
+    runtimeOnly "org.lwjgl:lwjgl-glfw:3.3.0:natives-macos"
+    runtimeOnly "org.lwjgl:lwjgl-openal:3.3.0:natives-macos"
+    runtimeOnly "org.lwjgl:lwjgl-opengl:3.3.0:natives-macos"
+    runtimeOnly "org.lwjgl:lwjgl-stb:3.3.0:natives-macos"
+
+    implementation "org.joml:joml:1.10.2"
+
+    implementation "io.github.spair:imgui-java-app:1.85.0"
+}
+
+test {
+    useJUnitPlatform()
+}
